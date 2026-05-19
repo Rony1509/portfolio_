@@ -18,7 +18,7 @@ export class EducationComponent {
       degree: 'Bachelor of Science in Software Engineering',
       institution: 'University of Dhaka',
       yearRange: '2023 - 2027',
-      gpa: '---- / 4.00'+' (Currently in 6th Semester)',
+      gpa: '----'+' (Currently in 6th Semester)',
       highlights: ['Data Structures', 'Algorithms', 'Web Development', 'Database Design', 'Software Architecture','Networking','Operating Systems'],
       description: 'Comprehensive computer science program focusing on software engineering principles and modern web technologies.',
       logoUrl: ''
