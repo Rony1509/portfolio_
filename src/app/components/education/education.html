@@ -1,0 +1,38 @@
+<section class="education" id="education" appScrollAnimate>
+  <div class="education__container">
+    <div class="education__header">
+      <h2 class="education__title">Educational Background</h2>
+      <div class="education__title-underline"></div>
+    </div>
+
+    <div class="education__timeline">
+      @for (edu of educations; track edu.id; let last = $last) {
+        <div class="education__item" appScrollAnimate>
+          <div class="education__marker">
+            <div class="education__marker-dot"></div>
+          </div>
+
+          <div class="education__card">
+            <div class="education__card-header">
+              <h3 class="education__degree">{{ edu.degree }}</h3>
+              <span class="education__year">{{ edu.yearRange }}</span>
+            </div>
+
+            <p class="education__institution">{{ edu.institution }}</p>
+            @if (edu.gpa) {
+              <p class="education__gpa">GPA: {{ edu.gpa }}</p>
+            }
+
+            <p class="education__description">{{ edu.description }}</p>
+
+            <div class="education__highlights">
+              @for (highlight of edu.highlights; track highlight) {
+                <span class="education__chip">{{ highlight }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

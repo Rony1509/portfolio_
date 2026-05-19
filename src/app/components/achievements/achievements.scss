@@ -1,0 +1,135 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.achievements {
+  @include section-spacing;
+}
+
+.achievements__container {
+  @include container;
+}
+
+.achievements__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.achievements__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.achievements__title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), #667eea);
+  margin: 0 auto;
+}
+
+.achievements__filter {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.achievements__filter-btn {
+  padding: 10px 24px;
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition);
+
+  &.active {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}
+
+.achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.achievements__card {
+  @include card-style;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.achievements__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), #667eea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.achievements__card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.achievements__card-org {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.achievements__card-date {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.achievements__card-description {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.achievements__card-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: all var(--transition);
+  text-decoration: none;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}

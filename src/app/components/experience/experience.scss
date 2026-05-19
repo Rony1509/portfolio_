@@ -1,0 +1,156 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.experience {
+  @include section-spacing;
+}
+
+.experience__container {
+  @include container;
+}
+
+.experience__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.experience__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.experience__title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), #667eea);
+  margin: 0 auto;
+}
+
+.experience__timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--color-primary), transparent);
+    }
+  }
+}
+
+.experience__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
+}
+
+.experience__marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-bg);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.experience__card {
+  @include card-style;
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.experience__header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience__position {
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.experience__type {
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  &--internship {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--color-primary);
+  }
+
+  &--part-time {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--color-accent);
+  }
+
+  &--freelance {
+    background-color: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+  }
+}
+
+.experience__company {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.experience__duration {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.experience__responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.experience__responsibility {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  position: relative;
+
+  &::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+}

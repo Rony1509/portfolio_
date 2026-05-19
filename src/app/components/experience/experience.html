@@ -1,0 +1,34 @@
+<section class="experience" id="experience" appScrollAnimate>
+  <div class="experience__container">
+    <div class="experience__header">
+      <h2 class="experience__title">Experience & Internships</h2>
+      <div class="experience__title-underline"></div>
+    </div>
+
+    <div class="experience__timeline">
+      @for (exp of experiences; track exp.id) {
+        <div class="experience__item" appScrollAnimate>
+          <div class="experience__marker"></div>
+
+          <div class="experience__card">
+            <div class="experience__header-info">
+              <h3 class="experience__position">{{ exp.position }}</h3>
+              <span class="experience__type" [class]="'experience__type--' + exp.type.toLowerCase()">
+                {{ exp.type }}
+              </span>
+            </div>
+
+            <p class="experience__company">{{ exp.company }}</p>
+            <span class="experience__duration">{{ exp.duration }}</span>
+
+            <ul class="experience__responsibilities">
+              @for (resp of exp.responsibilities; track resp) {
+                <li class="experience__responsibility">{{ resp }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
