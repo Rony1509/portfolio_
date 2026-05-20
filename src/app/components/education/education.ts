@@ -15,32 +15,51 @@ export class EducationComponent {
   educations: Education[] = [
     {
       id: 1,
-      degree: 'Bachelor of Science in Software Engineering',
+      degree: 'Bachelor of Science in Software Engineering (B.Sc. Engg.)',
       institution: 'University of Dhaka',
       yearRange: '2023 - 2027',
-      gpa: '----'+' (Currently in 6th Semester)',
-      highlights: ['Data Structures', 'Algorithms', 'Web Development', 'Database Design', 'Software Architecture','Networking','Operating Systems'],
-      description: 'Comprehensive computer science program focusing on software engineering principles and modern web technologies.',
+      gpa: 'In Progress (6th Semester)',
+      highlights: [
+        'Data Structures & Algorithms',
+        'Object-Oriented Programming',
+        'Web Engineering',
+        'Database Management Systems',
+        'Software Design & Architecture',
+        'Computer Networks',
+        'Operating Systems',
+        'Discrete Mathematics'
+      ],
+      description: 'Four-year undergraduate program under the Institute of Information Technology (IIT), University of Dhaka, following the semester system of the Bangladesh University Grants Commission (UGC).',
       logoUrl: ''
     },
     {
       id: 2,
-      degree: 'Higher Secondary Certificate (HSC)',
+      degree: 'Higher Secondary Certificate (HSC) — Science',
       institution: 'Dhaka City College',
-      yearRange: '2020 - 2021',
+      yearRange: '2020 - 2022', // HSC is a 2-year programme (Class 11–12)
       gpa: '5.00 / 5.00',
-      highlights: ['Science & Math Honors', 'Coding Club President', 'Science Fair Winner'],
-      description: 'Advanced STEM coursework with strong emphasis on computer science and mathematics.',
+      highlights: [
+        'Physics, Chemistry & Biology / Mathematics',
+        'Compulsory Bengali & English',
+        'ICT (Information & Communication Technology)',
+        'Dhaka Board — GPA 5.00 (Golden A+)'
+      ],
+      description: 'Two-year higher secondary programme under the Dhaka Education Board. The Science group covers Physics, Chemistry, Mathematics/Biology, and ICT, assessed via the HSC public examination conducted by the Bangladesh Inter Education Board.',
       logoUrl: ''
     },
     {
       id: 3,
-      degree: 'Secondary School Certificate (SSC)',
-      institution: 'Foilet High School',
-      yearRange: '2015 - 2019',
+      degree: 'Secondary School Certificate (SSC) — Science',
+      institution: 'Foiljana High School',
+      yearRange: '2019 - 2020', // SSC sits at end of Class 10
       gpa: '5.00 / 5.00',
-      highlights: ['Science & Math Honors', 'Coding Club President', 'Science Fair Winner'],
-      description: 'Advanced STEM coursework with strong emphasis on computer science and mathematics.',
+      highlights: [
+        'Physics, Chemistry & Higher Mathematics',
+        'Compulsory Bengali & English',
+        'ICT (Information & Communication Technology)',
+        'Dhaka Board — GPA 5.00 (Golden A+)'
+      ],
+      description: 'Secondary school programme under the national curriculum of the National Curriculum and Textbook Board (NCTB), culminating in the SSC public examination at the end of Class 10.',
       logoUrl: ''
     },
   ];
