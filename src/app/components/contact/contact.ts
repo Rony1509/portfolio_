@@ -98,6 +98,14 @@ export class ContactComponent implements OnInit {
     };
 
     setTimeout(() => {
+      // Create email body with visitor's information
+      const emailBody = `Name: ${payload.name}%0AEmail: ${payload.email}%0A%0AMessage:%0A${encodeURIComponent(payload.message)}`;
+      const subject = encodeURIComponent(payload.subject);
+      const mailtoLink = `mailto:bsse1509@gmail.com?subject=${subject}&body=${emailBody}`;
+      
+      // Open Gmail with pre-filled information
+      window.location.href = mailtoLink;
+      
       this.isLoading.set(false);
       this.submitSuccess.set(true);
       this.saveMessage(payload);
