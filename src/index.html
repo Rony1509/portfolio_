@@ -3,9 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>Portfolio</title>
-  <base href="/">
+  <base href="/Portfolio_/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Facebook browser fix -->
+  <script>
+    if (/FBAN|FBAV|FB_IAB|FB4A/i.test(navigator.userAgent)) {
+      var link = document.createElement('a');
+      link.href = location.href;
+      link.style = 'display:block;text-align:center;margin:40px auto;font-size:18px;font-family:sans-serif';
+      link.textContent = '🌐 Chrome/Browser-এ খুলতে এখানে ট্যাপ করুন';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.insertBefore(link, document.body.firstChild);
+      });
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>
