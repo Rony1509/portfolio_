@@ -8,19 +8,11 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <script>
-    var ua = navigator.userAgent || '';
-    if (/FBAN|FBAV|FB_IAB|FB4A|FBIOS/i.test(ua)) {
-      var url = location.href;
-      // Android
-      if (/android/i.test(ua)) {
-        location.href = 'intent://' + url.replace(/https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end';
-      }
-      // iPhone
-      else {
-        location.href = url.replace('https://', 'googlechrome://');
-      }
-    }
-  </script>
+  var ua = navigator.userAgent || '';
+  if (/FBAN|FBAV|FB_IAB|FB4A|FBIOS/i.test(ua)) {
+    location.href = 'intent://' + location.host + location.pathname + '#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end';
+  }
+</script>
 
 </head>
 <body>
