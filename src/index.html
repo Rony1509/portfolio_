@@ -7,18 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Facebook browser fix -->
   <script>
-    if (/FBAN|FBAV|FB_IAB|FB4A/i.test(navigator.userAgent)) {
-      var link = document.createElement('a');
-      link.href = location.href;
-      link.style = 'display:block;text-align:center;margin:40px auto;font-size:18px;font-family:sans-serif';
-      link.textContent = '🌐 Chrome/Browser-এ খুলতে এখানে ট্যাপ করুন';
-      document.addEventListener('DOMContentLoaded', function() {
-        document.body.insertBefore(link, document.body.firstChild);
-      });
+    var ua = navigator.userAgent || '';
+    if (/FBAN|FBAV|FB_IAB|FB4A|FBIOS/i.test(ua)) {
+      var url = location.href;
+      // Android
+      if (/android/i.test(ua)) {
+        location.href = 'intent://' + url.replace(/https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end';
+      }
+      // iPhone
+      else {
+        location.href = url.replace('https://', 'googlechrome://');
+      }
     }
   </script>
+
 </head>
 <body>
   <app-root></app-root>
