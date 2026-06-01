@@ -17,7 +17,7 @@ export class ProjectsComponent {
   selectedFilter = signal<string>('All');
   projects = this.projectsService.getProjects();
 
-  categories = ['All', 'Web', 'Mobile', 'AI/ML', 'Open Source'];
+  categories = ['All', 'Web', 'Mobile', 'AI/ML', 'Open Source', 'Game'];
 
   filteredProjects = computed(() => {
     const filter = this.selectedFilter();

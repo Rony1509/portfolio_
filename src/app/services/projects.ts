@@ -8,13 +8,13 @@ export class ProjectsService {
   private projects: Project[] = [
     {
       id: 1,
-      title: 'AI Study Buddy',
-      description: 'An AI-powered study assistant that helps students organize notes and generate quizzes.',
-      techStack: ['Python', 'TensorFlow', 'React', 'Node.js'],
-      category: 'AI/ML',
-      githubUrl: 'https://github.com/johndoe/ai-study-buddy',
-      liveUrl: 'https://ai-study-buddy.com',
-      imageUrl: '/assets/projects/ai-study-buddy.jpg'
+      title: 'Mini Chess',
+      description: 'A fully functional chess game built with clean logic and interactive UI.',
+      techStack: ['JavaScript', 'HTML', 'CSS','TypeScript'],
+      category: 'Game',
+      githubUrl: 'https://github.com/Rony1509/mini-chess',
+      liveUrl: 'https://rony1509.github.io/mini-chess/',
+      imageUrl: '/assets/projects/mini-chess.jpg'
     },
     {
       id: 2,
