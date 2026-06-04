@@ -18,13 +18,13 @@ export class ProjectsService {
     },
     {
       id: 2,
-      title: 'Campus Event Manager',
-      description: 'A web app for managing university events, with real-time notifications and RSVP system.',
-      techStack: ['Angular', 'Firebase', 'TypeScript'],
+      title: 'Github User Search',
+      description: 'GitHub User Search is a modern Angular application that enables users to search for GitHub profiles in real time using the GitHub REST API.',
+      techStack: ['Angular', 'GitHub API', 'TypeScript'],
       category: 'Web',
-      githubUrl: 'https://github.com/johndoe/campus-event-manager',
-      liveUrl: 'https://campus-events.com',
-      imageUrl: '/assets/projects/campus-event-manager.jpg'
+      githubUrl: 'https://github.com/Rony1509/GithubUserSearch',
+      liveUrl: 'https://github-user-search-ebon-sigma.vercel.app/',
+      imageUrl: ''
     },
     {
       id: 3,
