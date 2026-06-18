@@ -8,7 +8,7 @@ cp dist/Portfolio/browser/index.html 404.html
 
 echo "Pushing to GitHub..."
 git add .
-git commit -m "Deploy"
+git commit -m "Deploy: fix base href"
 git push origin main
 
 echo "Done!"
