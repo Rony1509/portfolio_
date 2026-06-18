@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Building..."
-ng build
+ng build --base-href="/portfolio_/"
 
 echo "Copying files..."
 cp -r dist/Portfolio/browser/* .
