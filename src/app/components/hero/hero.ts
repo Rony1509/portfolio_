@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,17 +9,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './hero.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeroComponent implements OnInit {
+export class HeroComponent implements OnInit, OnDestroy {
   displayText = signal('');
   typingTexts = [
-    'Software Engineering Student',
+    'Software Engineer',
     'Full Stack Developer',
-    'Open Source Enthusiast',
+    'Angular Specialist',
+    'Open Source Contributor',
     'Problem Solver'
   ];
   currentTextIndex = signal(0);
   currentCharIndex = signal(0);
-  isTyping = signal(true);
+  private timeoutId: any;
 
   socialLinks = [
     { icon: 'github', url: 'https://github.com/Rony1509', label: 'GitHub' },
@@ -32,16 +33,18 @@ export class HeroComponent implements OnInit {
     this.startTyping();
   }
 
+  ngOnDestroy() {
+    clearTimeout(this.timeoutId);
+  }
+
   private startTyping() {
     const text = this.typingTexts[this.currentTextIndex()];
-    
     if (this.currentCharIndex() < text.length) {
-      const nextChar = text[this.currentCharIndex()];
-      this.displayText.update(current => current + nextChar);
+      this.displayText.update(current => current + text[this.currentCharIndex()]);
       this.currentCharIndex.update(i => i + 1);
-      setTimeout(() => this.startTyping(), 50);
+      this.timeoutId = setTimeout(() => this.startTyping(), 60);
     } else {
-      setTimeout(() => this.eraseText(), 2000);
+      this.timeoutId = setTimeout(() => this.eraseText(), 2200);
     }
   }
 
@@ -49,15 +52,18 @@ export class HeroComponent implements OnInit {
     if (this.currentCharIndex() > 0) {
       this.displayText.update(current => current.slice(0, -1));
       this.currentCharIndex.update(i => i - 1);
-      setTimeout(() => this.eraseText(), 30);
+      this.timeoutId = setTimeout(() => this.eraseText(), 28);
     } else {
       this.currentTextIndex.update(i => (i + 1) % this.typingTexts.length);
-      setTimeout(() => this.startTyping(), 500);
+      this.timeoutId = setTimeout(() => this.startTyping(), 400);
     }
   }
 
   scrollToProjects() {
-    const projectsSection = document.getElementById('projects');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  scrollToContact() {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   }
 }
